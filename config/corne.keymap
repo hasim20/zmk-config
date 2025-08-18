@@ -74,10 +74,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &msc MOVE_Y(15)   &mkp LCLK        &mmv MOVE_UP    &mkp RCLK        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &msc MOVE_Y(-15)  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans            &msc MOVE_X(-5)  &trans          &msc MOVE_X(5)   &trans  &trans
-                        &trans  &trans  &trans    &trans            &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc MOVE_Y(15)   &mkp LCLK         &mmv MOVE_UP    &mkp RCLK         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc MOVE_Y(-15)  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans            &msc MOVE_X(-15)  &trans          &msc MOVE_X(-15)  &trans  &trans
+                        &trans  &trans  &trans    &trans            &trans            &trans
             >;
         };
 

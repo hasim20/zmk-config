@@ -35,9 +35,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q           &kp W           &kp E             &kp R        &kp T      &kp Y      &kp U        &kp I              &kp O            &kp P               &kp BSPC
-&kp TAB         &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G      &kp H      &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt SEMI SEMICOLON  &kp SQT
-&kp LEFT_SHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B      &kp N      &kp M        &kp COMMA          &kp DOT          &kp FSLH            &kp RIGHT_SHIFT
+&kp ESC         &kp Q           &kp W           &kp E             &kp R        &kp T      &kp Y      &kp U        &kp I              &kp O            &kp P                    &kp BSPC
+&kp TAB         &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G      &kp H      &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
+&kp LEFT_SHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B      &kp N      &kp M        &kp COMMA          &kp DOT          &kp FSLH                 &kp RIGHT_SHIFT
                                                 &kp LGUI          &mo 1        &kp RET    &kp SPACE  &mo 2        &kp RALT
             >;
         };

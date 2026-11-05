@@ -1,12 +1,11 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
 #define NAV  1
 #define SYM  2
 #define FN   3
-
 #define HYPER LC(LA(LG(LSHFT)))
 
 /*
@@ -17,22 +16,21 @@
  * | 24 | 25 | 26 | 27 | 28 | 29 |     | 30 | 31 | 32 | 33 | 34 | 35 |
  *                | 36 | 37 | 38 |     | 39 | 40 | 41 |
  */
+
 #define KEYS_L 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29
 #define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
 #define THUMBS 36 37 38 39 40 41
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
 / {
     behaviors {
         /* =================================================================
          * HOME ROW MODS - TANGAN KIRI (Hanya aktif dengan Tangan Kanan/Thumb)
          * ================================================================= */
-
         // 1A. Shift Kiri (F) - 160ms
         // prior-idle kecil (20ms) agar habis tekan Spasi bisa langsung Shift tanpa terblokir
+
         hml_fast: hrm_left_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -46,6 +44,7 @@
         };
 
         // 2A. Ctrl & Alt Kiri (S, D) - 230ms + Anti-Streak 135ms (Setara @.tp 55ms Kanata)
+
         hml_med: hrm_left_med {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -59,6 +58,7 @@
         };
 
         // 3A. Kelingking Kiri (A -> LGUI) - 275ms + Anti-Streak 135ms
+
         hml_slow: hrm_left_slow {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -74,8 +74,8 @@
         /* =================================================================
          * HOME ROW MODS - TANGAN KANAN (Hanya aktif dengan Tangan Kiri/Thumb)
          * ================================================================= */
-
         // 1B. Shift Kanan (J) - 160ms
+
         hmr_fast: hrm_right_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -89,6 +89,7 @@
         };
 
         // 2B. Ctrl & Alt Kanan (K, L) - 230ms + Anti-Streak 135ms
+
         hmr_med: hrm_right_med {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -102,6 +103,7 @@
         };
 
         // 3B. Kelingking Kanan (; -> RGUI) - 200ms + Anti-Streak 135ms
+
         hmr_semi: hrm_right_semi {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -117,8 +119,8 @@
         /* =================================================================
          * MODIFIER NON-HURUF (Caps Hyper, Thumb Mac Shortcuts, Tap-Dance)
          * ================================================================= */
-
         // Untuk tombol luar/thumb (Caps, Cmd+Tab, Cmd+Grave) - Tanpa filter posisi tangan
+
         mod_230: modifier_hold_230 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -129,6 +131,7 @@
         };
 
         // Tap-Dance @caps-tap (140ms): 1x Tap = ESC, 2x Tap = Caps Word
+
         td_caps: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -137,6 +140,7 @@
         };
 
         // @caps_mod (200 300): Tap = td_caps, Hold = Layer NAV
+
         caps_mod: caps_layer_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -152,18 +156,18 @@
 
         base_layer {
             bindings = <
-&kp TAB            &kp Q            &kp W           &kp E            &kp R            &kp T         &kp Y     &kp U            &kp I            &kp O           &kp P             &kp BSPC
-&mod_230 HYPER ESC &hml_slow LGUI A &hml_med LALT S &hml_med LCTRL D &hml_fast LSHFT F &kp G        &kp H     &hmr_fast RSHFT J &hmr_med RCTRL K &hmr_med RALT L &hmr_semi RGUI SEMI &kp SQT
-&kp LSHFT          &kp Z            &kp X           &kp C            &kp V            &kp B         &kp N     &kp M            &kp COMMA       &kp DOT         &kp FSLH          &caps_mod NAV 0
-                                    &mod_230 LALT RG(GRAVE) &mod_230 LCTRL RG(TAB) &lt NAV SPACE    &lt SYM RET &mo FN          &kp RGUI
+&kp TAB             &kp Q             &kp W            &kp E                      &kp R                     &kp T            &kp Y          &kp U              &kp I             &kp O            &kp P                &kp BSPC
+&mod_230 HYPER ESC  &hml_slow LGUI A  &hml_med LALT S  &hml_med LCTRL D           &hml_fast LSHFT F         &kp G            &kp H          &hmr_fast RSHFT J  &hmr_med RCTRL K  &hmr_med RALT L  &hmr_semi RGUI SEMI  &kp SQT
+&kp LSHFT           &kp Z             &kp X            &kp C                      &kp V                     &kp B            &kp N          &kp M              &kp COMMA         &kp DOT          &kp FSLH             &caps_mod NAV 0
+                                                       &mod_230 (LALT) RG(GRAVE)  &mod_230 (LCTRL) RG(TAB)  &lt NAV ENTER    &lt SYM SPACE  &mo FN             &kp RGUI
             >;
         };
 
         nav_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans     &trans  &kp DEL
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp HOME   &kp END    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans  &kp DEL
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp HOME  &kp END    &trans  &trans
                         &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
@@ -179,10 +183,28 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7       &kp F8       &kp F9      &kp F10     &kp F11       &kp F12
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PREV   &kp C_PP     &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
-&sys_reset  &bootloader   &trans        &trans        &trans        &trans          &kp C_BRI_DN &kp C_BRI_UP &trans      &trans      &bootloader   &sys_reset
-                                        &trans        &trans        &trans          &trans       &trans       &trans
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7        &kp F8        &kp F9      &kp F10     &kp F11       &kp F12
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PREV    &kp C_PP      &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
+&sys_reset  &bootloader   &trans        &trans        &trans        &trans          &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans      &bootloader   &sys_reset
+                                        &trans        &trans        &trans          &trans        &trans        &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };

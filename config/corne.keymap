@@ -135,7 +135,7 @@
         td_caps: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&none>, <&caps_word>;
         };
 
@@ -159,6 +159,15 @@
             bindings = <&mo>, <&kp>;
 
             label = "MOD_231";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        caps_words {
+            bindings = <&caps_word>;
+            key-positions = <16 18>;
         };
     };
 

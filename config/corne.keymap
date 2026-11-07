@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -179,7 +180,7 @@
 &kp TAB             &kp Q             &kp W            &kp E                   &kp R                 &kp T        &kp Y        &kp U              &kp I             &kp O            &kp P                &kp BSPC
 &mod_230 HYPER ESC  &hml_slow LGUI A  &hml_med LALT S  &hml_med LCTRL D        &hml_fast LSHFT F     &kp G        &kp H        &hmr_fast RSHFT J  &hmr_med RCTRL K  &hmr_med RALT L  &hmr_semi RGUI SEMI  &kp SQT
 &kp LSHFT           &kp Z             &kp X            &kp C                   &kp V                 &kp B        &kp N        &kp M              &kp COMMA         &kp DOT          &kp FSLH             &td_caps
-                                                       &mod_231 (3) RG(GRAVE)  &mod_231 (2) RG(TAB)  &kp ENTER    &lt 1 SPACE  &mo 1              &mo 3
+                                                       &mod_231 (4) RG(GRAVE)  &mod_231 (2) RG(TAB)  &kp ENTER    &lt 1 SPACE  &mo 1              &mo 3
             >;
         };
 
@@ -207,6 +208,15 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PREV    &kp C_PP      &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
 &sys_reset  &bootloader   &none         &none         &none         &none           &kp C_BRI_DN  &kp C_BRI_UP  &none       &none       &bootloader   &sys_reset
                                         &trans        &trans        &trans          &trans        &trans        &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&none  &none  &none  &none   &none   &none     &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &none  &none
+&none  &none  &none  &none   &none   &none     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
+&none  &none  &none  &none   &none   &none     &none           &none           &none           &none            &none  &none
+                     &trans  &trans  &trans    &trans          &trans          &trans
             >;
         };
     };

@@ -156,28 +156,28 @@
 
         base_layer {
             bindings = <
-&kp TAB             &kp Q             &kp W            &kp E                      &kp R                     &kp T            &kp Y          &kp U              &kp I             &kp O            &kp P                &kp BSPC
-&mod_230 HYPER ESC  &hml_slow LGUI A  &hml_med LALT S  &hml_med LCTRL D           &hml_fast LSHFT F         &kp G            &kp H          &hmr_fast RSHFT J  &hmr_med RCTRL K  &hmr_med RALT L  &hmr_semi RGUI SEMI  &kp SQT
-&kp LSHFT           &kp Z             &kp X            &kp C                      &kp V                     &kp B            &kp N          &kp M              &kp COMMA         &kp DOT          &kp FSLH             &caps_mod NAV 0
-                                                       &mod_230 (LALT) RG(GRAVE)  &mod_230 (LCTRL) RG(TAB)  &lt NAV ENTER    &lt SYM SPACE  &mo FN             &kp RGUI
-            >;
-        };
-
-        nav_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans  &kp DEL
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp HOME  &kp END    &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
+&kp TAB             &kp Q             &kp W            &kp E                      &kp R                     &kp T          &kp Y        &kp U              &kp I             &kp O            &kp P                &kp BSPC
+&mod_230 HYPER ESC  &hml_slow LGUI A  &hml_med LALT S  &hml_med LCTRL D           &hml_fast LSHFT F         &kp G          &kp H        &hmr_fast RSHFT J  &hmr_med RCTRL K  &hmr_med RALT L  &hmr_semi RGUI SEMI  &kp SQT
+&kp LSHFT           &kp Z             &kp X            &kp C                      &kp V                     &kp B          &kp N        &kp M              &kp COMMA         &kp DOT          &kp FSLH             &caps_mod 2 0
+                                                       &mod_230 (LALT) RG(GRAVE)  &mod_230 (LCTRL) RG(TAB)  &lt 2 ENTER    &lt 1 SPACE  &mo 3              &none
             >;
         };
 
         sym_layer {
             bindings = <
-&kp GRAVE  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-&trans     &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &trans
-                             &trans    &trans    &trans       &trans     &trans     &trans
+&kp GRAVE  &kp N1  &kp N2    &kp N3     &kp N4     &kp N5    &kp N6     &kp N7                 &kp N8                       &kp N9                       &kp N0                &kp BSPC
+&trans     &none   &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp MINUS  &hmr_fast RSHFT EQUAL  &hmr_med RCTRL LEFT_BRACKET  &hmr_med LALT RIGHT_BRACKET  &kp NON_US_BACKSLASH  &none
+&none      &none   &none     &none      &none      &none     &none      &none                  &none                        &none                        &none                 &none
+                             &trans     &trans     &trans    &trans     &trans                 &trans
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+&none   &none     &none     &none      &none      &none     &none     &none     &none     &none      &none  &kp DEL
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &none  &none
+&none   &none     &none     &none      &none      &none     &none     &none     &kp HOME  &kp END    &none  &none
+                            &trans     &trans     &trans    &trans    &trans    &trans
             >;
         };
 
@@ -185,26 +185,8 @@
             bindings = <
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7        &kp F8        &kp F9      &kp F10     &kp F11       &kp F12
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PREV    &kp C_PP      &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
-&sys_reset  &bootloader   &trans        &trans        &trans        &trans          &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans      &bootloader   &sys_reset
+&sys_reset  &bootloader   &none         &none         &none         &none           &kp C_BRI_DN  &kp C_BRI_UP  &none       &none       &bootloader   &sys_reset
                                         &trans        &trans        &trans          &trans        &trans        &trans
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
